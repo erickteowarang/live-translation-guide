@@ -17,8 +17,8 @@
     --good: #2F7D5B;
     --shadow: 0 1px 2px rgba(27,26,24,.05), 0 12px 30px -18px rgba(27,26,24,.28);
 
-    --serif: "Iowan Old Style", "Charter", "Palatino Linotype", Palatino, Georgia, serif;
-    --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --serif: "Iowan Old Style", "Charter", "Palatino Linotype", Palatino, Georgia, "Hiragino Mincho ProN", "Yu Mincho", serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
     --mono: ui-monospace, "SF Mono", "Menlo", monospace;
     --jp-serif: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
     --jp-sans: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
@@ -57,59 +57,57 @@
   }
   .wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
 
-  .eyebrow {
-    font-family: var(--mono); font-size: 12px; letter-spacing: .18em;
-    text-transform: uppercase; color: var(--ink-faint); margin: 0;
-  }
+  .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-faint); margin: 0; }
   .eyebrow .jp { font-family: var(--jp-sans); letter-spacing: .08em; }
 
-  h1, h2, h3 { font-family: var(--serif); font-weight: 600; text-wrap: balance; line-height: 1.12; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 600; text-wrap: balance; line-height: 1.14; }
   em { font-style: italic; }
 
-  /* HERO */
-  .hero { padding: clamp(56px, 11vw, 128px) 0 clamp(40px, 7vw, 76px); position: relative; overflow: hidden; }
+  /* ---------- TOP BAR ---------- */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--paper) 86%, transparent);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 12px; padding-bottom: 12px; }
+  .brand { display: flex; align-items: baseline; gap: 11px; font-size: 13.5px; color: var(--ink-soft); }
+  .brand .mk { font-family: var(--jp-serif); font-size: 21px; letter-spacing: .04em; line-height: 1; }
+  .brand .mk .a { color: var(--indigo); }
+  .brand .mk .b { color: var(--vermilion); }
+  .lang { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 999px; padding: 3px; background: var(--card); gap: 2px; }
+  .lang button {
+    font-family: var(--mono); font-size: 12px; letter-spacing: .06em; cursor: pointer;
+    border: none; background: transparent; color: var(--ink-soft); padding: 6px 15px;
+    border-radius: 999px; transition: background .2s, color .2s;
+  }
+  .lang button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+
+  /* ---------- HERO ---------- */
+  .hero { padding: clamp(48px, 9vw, 108px) 0 clamp(38px, 6vw, 72px); position: relative; overflow: hidden; }
   .hero-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: end; }
   @media (max-width: 800px) { .hero-grid { grid-template-columns: 1fr; align-items: start; } }
-  .hero h1 { font-size: clamp(38px, 6.4vw, 76px); letter-spacing: -0.015em; margin: 20px 0 0; }
+  .hero h1 { font-size: clamp(36px, 6.2vw, 74px); letter-spacing: -0.015em; margin: 20px 0 0; }
   .hero h1 em { font-style: normal; color: var(--vermilion); }
-  .hero-sub { font-size: clamp(16px, 2vw, 19px); color: var(--ink-soft); max-width: 34ch; margin: 22px 0 0; }
-  .hero-mark { font-family: var(--jp-serif); font-size: clamp(64px, 15vw, 150px); line-height: .92; letter-spacing: .02em; }
+  .hero-sub { font-size: clamp(16px, 2vw, 19px); color: var(--ink-soft); max-width: 40ch; margin: 22px 0 0; }
+  .hero-mark { font-family: var(--jp-serif); font-size: clamp(60px, 14vw, 144px); line-height: .92; letter-spacing: .02em; }
   .hero-mark .a { color: var(--indigo); }
   .hero-mark .b { color: var(--vermilion); }
-  .hero-mark small {
-    display: block; font-family: var(--mono); font-size: 12px; letter-spacing: .16em;
-    text-transform: uppercase; color: var(--ink-faint); margin-top: 14px;
-  }
+  .hero-mark small { display: block; font-family: var(--mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); margin-top: 14px; }
 
   section { padding: clamp(40px, 7vw, 76px) 0; border-top: 1px solid var(--line); }
-  .sec-head { max-width: 64ch; margin-bottom: clamp(26px, 4vw, 40px); }
+  .sec-head { max-width: 66ch; margin-bottom: clamp(26px, 4vw, 40px); }
   .sec-head h2 { font-size: clamp(26px, 3.6vw, 40px); margin: 14px 0 0; letter-spacing: -0.01em; }
   .sec-head p { color: var(--ink-soft); font-size: 17px; margin: 14px 0 0; }
   .sec-head p em { color: var(--ink); font-style: normal; font-weight: 600; }
 
   /* ---------- INTERACTIVE SHELL ---------- */
-  .sim {
-    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
-    padding: clamp(20px, 3.4vw, 36px); box-shadow: var(--shadow);
-  }
-  .sim + .sim { margin-top: 22px; }
-  .sim-label {
-    font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
-    color: var(--ink-faint); margin: 0 0 4px;
-  }
-  .sim-title { font-family: var(--serif); font-size: clamp(19px, 2.4vw, 24px); margin: 0 0 20px; }
+  .sim { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: clamp(20px, 3.4vw, 36px); box-shadow: var(--shadow); }
+  .sim-label { font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 4px; }
+  .sim-title { font-family: var(--jp-serif); font-size: clamp(19px, 2.4vw, 24px); margin: 0 0 20px; letter-spacing: .02em; }
 
-  /* stream of revealed tokens */
-  .stream {
-    display: flex; flex-wrap: wrap; gap: 9px; align-items: stretch;
-    min-height: 74px; padding: 16px; border-radius: 11px;
-    background: var(--paper); border: 1px solid var(--line);
-  }
-  .tok {
-    display: flex; flex-direction: column; gap: 4px; justify-content: center;
-    border: 1px solid var(--line-strong); border-radius: 9px; padding: 8px 13px; background: var(--card);
-    animation: pop .32s cubic-bezier(.2,.7,.3,1.2) both;
-  }
+  .stream { display: flex; flex-wrap: wrap; gap: 9px; align-items: stretch; min-height: 74px; padding: 16px; border-radius: 11px; background: var(--paper); border: 1px solid var(--line); }
+  .tok { display: flex; flex-direction: column; gap: 4px; justify-content: center; border: 1px solid var(--line-strong); border-radius: 9px; padding: 8px 13px; background: var(--card); animation: pop .32s cubic-bezier(.2,.7,.3,1.2) both; }
   @keyframes pop { from { opacity: 0; transform: translateY(8px) scale(.96); } }
   .tok .w { font-family: var(--jp-sans); font-size: clamp(17px, 2.2vw, 22px); font-weight: 500; white-space: nowrap; }
   .tok .g { font-family: var(--mono); font-size: 10.5px; letter-spacing: .03em; color: var(--ink-faint); white-space: nowrap; }
@@ -118,100 +116,64 @@
   .tok.verb .g { color: var(--vermilion-ink); opacity: .9; }
   .tok.pos { border-color: var(--good); background: color-mix(in srgb, var(--good) 12%, transparent); }
   .tok.pos .w { color: var(--good); }
-  .stream .waiting {
-    align-self: center; font-family: var(--mono); font-size: 12px; letter-spacing: .06em;
-    color: var(--ink-faint); animation: blink 1.3s steps(2) infinite;
-  }
+  .stream .waiting { align-self: center; font-family: var(--mono); font-size: 12px; letter-spacing: .06em; color: var(--ink-faint); animation: blink 1.3s steps(2) infinite; }
   @keyframes blink { 50% { opacity: .35; } }
 
-  /* commitment meter */
   .meter-row { display: flex; align-items: center; gap: 14px; margin: 20px 0 6px; }
-  .meter-row .cap { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint); white-space: nowrap; }
-  .meter { flex: 1; height: 9px; border-radius: 999px; background: var(--line); overflow: hidden; }
-  .meter i {
-    display: block; height: 100%; width: 0%;
-    background: linear-gradient(90deg, var(--vermilion), var(--vermilion));
-    border-radius: 999px; transition: width .45s cubic-bezier(.3,.7,.3,1), background .3s;
-  }
-  .meter i.full { background: linear-gradient(90deg, var(--good), var(--good)); }
+  .meter-row .cap { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint); }
+  .meter { flex: 1; height: 9px; border-radius: 999px; background: var(--line); overflow: hidden; min-width: 80px; }
+  .meter i { display: block; height: 100%; width: 0%; background: var(--vermilion); border-radius: 999px; transition: width .45s cubic-bezier(.3,.7,.3,1), background .3s; }
+  .meter i.full { background: var(--good); }
   .meter-val { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); width: 42px; text-align: right; font-variant-numeric: tabular-nums; }
 
-  /* interpreter guess panel */
-  .guess {
-    margin-top: 16px; padding: 18px 20px; border-radius: 11px;
-    background: var(--paper); border: 1px solid var(--line); border-left: 3px solid var(--vermilion);
-  }
+  .guess { margin-top: 16px; padding: 18px 20px; border-radius: 11px; background: var(--paper); border: 1px solid var(--line); border-left: 3px solid var(--vermilion); }
   .guess.done { border-left-color: var(--good); }
   .guess .who { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 8px; }
   .guess .said { font-family: var(--serif); font-size: clamp(19px, 2.6vw, 25px); margin: 0; line-height: 1.25; min-height: 1.25em; }
   .guess .said .dim { color: var(--ink-faint); font-style: italic; }
   .guess .note { margin: 12px 0 0; font-size: 14.5px; color: var(--ink-soft); }
 
-  /* controls */
   .controls { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; align-items: center; }
-  .btn {
-    font-family: var(--sans); font-size: 15px; font-weight: 550; cursor: pointer;
-    border: 1px solid var(--ink); background: var(--ink); color: var(--paper);
-    padding: 11px 20px; border-radius: 999px; transition: transform .1s, opacity .2s, background .2s;
-  }
+  .btn { font-family: var(--sans); font-size: 15px; font-weight: 550; cursor: pointer; border: 1px solid var(--ink); background: var(--ink); color: var(--paper); padding: 11px 20px; border-radius: 999px; transition: transform .1s, opacity .2s, background .2s; }
   .btn:hover { transform: translateY(-1px); }
   .btn:active { transform: translateY(0); }
   .btn:disabled { opacity: .35; cursor: default; transform: none; }
   .btn.ghost { background: transparent; color: var(--ink); border-color: var(--line-strong); }
   .btn .k { font-family: var(--mono); opacity: .6; margin-left: 8px; font-size: 12px; }
 
-  /* ending toggle */
-  .flip-box {
-    margin-top: 20px; padding: 18px 20px; border-radius: 11px;
-    border: 1px dashed var(--line-strong); background: var(--paper);
-    display: none;
-  }
+  .flip-box { margin-top: 20px; padding: 18px 20px; border-radius: 11px; border: 1px dashed var(--line-strong); background: var(--paper); display: none; }
   .flip-box.show { display: block; animation: pop .4s both; }
   .flip-box p.lead { margin: 0 0 12px; font-size: 14.5px; color: var(--ink-soft); }
   .flip-box p.lead b { color: var(--ink); }
   .seg { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 999px; padding: 3px; background: var(--card); gap: 3px; }
-  .seg button {
-    font-family: var(--jp-sans); font-size: 15px; cursor: pointer; border: none; background: transparent;
-    color: var(--ink-soft); padding: 8px 16px; border-radius: 999px; transition: background .2s, color .2s;
-  }
+  .seg button { font-family: var(--jp-sans); font-size: 15px; cursor: pointer; border: none; background: transparent; color: var(--ink-soft); padding: 8px 16px; border-radius: 999px; transition: background .2s, color .2s; }
   .seg button .en { font-family: var(--mono); font-size: 11px; display: block; margin-top: 2px; letter-spacing: .04em; }
   .seg button[aria-pressed="true"][data-pol="pos"] { background: var(--good); color: #fff; }
   .seg button[aria-pressed="true"][data-pol="neg"] { background: var(--vermilion); color: #fff; }
 
-  /* subject demo */
-  .subj-jp {
-    padding: 20px; border-radius: 11px; background: var(--paper); border: 1px solid var(--line);
-    text-align: center;
-  }
+  .subj-jp { padding: 20px; border-radius: 11px; background: var(--paper); border: 1px solid var(--line); text-align: center; }
   .subj-jp .big { font-family: var(--jp-serif); font-size: clamp(26px, 5vw, 42px); margin: 0; letter-spacing: .04em; }
-  .subj-jp .rom { font-family: var(--mono); font-size: 12px; color: var(--ink-faint); letter-spacing: .06em; margin: 10px 0 0; }
+  .subj-jp .rom { font-family: var(--mono); font-size: 12px; color: var(--ink-faint); letter-spacing: .04em; margin: 10px 0 0; }
   .subj-chips { display: flex; flex-wrap: wrap; gap: 9px; margin: 20px 0 0; }
   .subj-chips .lbl { width: 100%; font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 2px; }
-  .chip {
-    font-family: var(--sans); font-size: 15px; cursor: pointer; border: 1px solid var(--line-strong);
-    background: var(--card); color: var(--ink); padding: 9px 16px; border-radius: 999px; transition: all .18s;
-  }
+  .chip { font-family: var(--sans); font-size: 15px; cursor: pointer; border: 1px solid var(--line-strong); background: var(--card); color: var(--ink); padding: 9px 16px; border-radius: 999px; transition: all .18s; }
   .chip:hover { border-color: var(--indigo); }
   .chip[aria-pressed="true"] { background: var(--indigo); color: #fff; border-color: var(--indigo); }
-  .subj-out {
-    margin-top: 18px; padding: 18px 20px; border-radius: 11px; background: var(--indigo-wash);
-    border-left: 3px solid var(--indigo);
-  }
+  .subj-out { margin-top: 18px; padding: 18px 20px; border-radius: 11px; background: var(--indigo-wash); border-left: 3px solid var(--indigo); }
   .subj-out .who { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--indigo-ink); margin: 0 0 6px; }
   .subj-out .said { font-family: var(--serif); font-size: clamp(18px, 2.4vw, 23px); margin: 0; color: var(--ink); }
+  .sim .note.foot { margin-top: 14px; font-size: 14px; color: var(--ink-soft); }
 
-  /* FRICTION CARDS */
   .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   @media (max-width: 860px) { .cards { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 560px) { .cards { grid-template-columns: 1fr; } }
   .card { background: var(--card); border: 1px solid var(--line); border-radius: 13px; padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 9px; }
   .card .num { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; color: var(--vermilion); border-bottom: 2px solid var(--vermilion-wash); padding-bottom: 8px; margin-bottom: 3px; }
   .card h3 { font-size: 20px; margin: 0; }
-  .card h3 .jp { font-family: var(--jp-sans); font-size: 15px; color: var(--ink-faint); font-weight: 500; display: block; margin-top: 3px; letter-spacing: .02em; }
+  .card h3 .sub { font-family: var(--jp-sans); font-size: 15px; color: var(--ink-faint); font-weight: 500; display: block; margin-top: 3px; letter-spacing: .02em; }
   .card p { margin: 0; font-size: 14.5px; color: var(--ink-soft); line-height: 1.58; }
   .card p .ex { font-family: var(--jp-sans); color: var(--ink); }
 
-  /* SHARED RULES BAND */
   .band { border-top: none; }
   :root[data-theme="light"] .band { background: var(--indigo); }
   :root[data-theme="dark"] .band { background: #1a2740; }
@@ -228,9 +190,10 @@
   .rule .t { font-weight: 600; font-size: 16px; color: #fff; margin: 0; }
   .rule .d { font-size: 14px; color: rgba(255,255,255,.74); margin: 3px 0 0; }
 
-  /* TWO TRACKS */
   .tracks { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   @media (max-width: 780px) { .tracks { grid-template-columns: 1fr; } }
+  [data-lang="en"] .track.en { order: -1; }
+  [data-lang="ja"] .track.jp { order: -1; }
   .track { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--card); }
   .track-head { padding: 22px 24px 20px; border-bottom: 1px solid var(--line); }
   .track-head .who { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
@@ -244,9 +207,9 @@
   .track li { display: flex; gap: 13px; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
   .track li:last-child { border-bottom: none; }
   .track li .chk { flex: none; color: var(--ink-faint); font-family: var(--mono); }
-  .track li b { font-weight: 600; }
-  .track li span.tx { color: var(--ink-soft); }
-  .track li span.tx .jp { font-family: var(--jp-sans); color: var(--ink); }
+  .track li .tx { color: var(--ink-soft); }
+  .track li .tx b { color: var(--ink); font-weight: 600; }
+  .track li .tx .jp { font-family: var(--jp-sans); color: var(--ink); }
 
   footer { border-top: 1px solid var(--line); padding: 40px 0 64px; color: var(--ink-faint); font-size: 13.5px; }
   footer .wrap { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: baseline; }
@@ -260,135 +223,148 @@
     .stream .waiting { animation: none; }
   }
   :focus-visible { outline: 2px solid var(--vermilion); outline-offset: 3px; border-radius: 6px; }
+  noscript .ns { display: block; max-width: 1060px; margin: 0 auto; padding: 16px 24px; font-family: var(--mono); font-size: 13px; color: var(--vermilion-ink); }
 </style>
+
+<div class="topbar">
+  <div class="wrap bar">
+    <span class="brand"><span class="mk" aria-hidden="true"><span class="a">話</span><span class="b">訳</span></span> <span data-t="brandSub">JP⇄EN interpreting</span></span>
+    <div class="lang" role="group" aria-label="Language / 言語">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="ja" aria-pressed="false">日本語</button>
+    </div>
+  </div>
+</div>
+
+<noscript><span class="ns">This page uses JavaScript for its interactive demos and language toggle. / このページは対話デモと言語切り替えに JavaScript を使用します。</span></noscript>
 
 <header class="hero">
   <div class="wrap hero-grid">
     <div class="reveal in">
-      <p class="eyebrow">通訳 <span aria-hidden="true">·</span> Real-time interpretation</p>
-      <h1>The interpreter is always <em>one verb behind.</em></h1>
-      <p class="hero-sub">Live Japanese⇄English interpreting isn't slow because the interpreter is slow. The two languages are built in opposite orders. Try it yourself below — then see how the way you speak can make it easier.</p>
+      <p class="eyebrow" data-t="heroEyebrow">通訳 <span aria-hidden="true">·</span> Real-time interpretation</p>
+      <h1 data-t="heroH1">The interpreter is always <em>one verb behind.</em></h1>
+      <p class="hero-sub" data-t="heroSub">Live Japanese⇄English interpreting isn't slow because the interpreter is slow. The two languages are built in opposite orders. Try it yourself below — then see how the way you speak can make it easier.</p>
     </div>
     <div class="hero-mark reveal in" aria-hidden="true">
       <span class="a">話</span><span class="b">訳</span>
-      <small>speak · render</small>
+      <small data-t="heroMark">speak · render</small>
     </div>
   </div>
 </header>
 
 <main>
-  <!-- INTERACTIVE 1: word-by-word -->
+  <!-- INTERACTIVE 1 -->
   <section>
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="eyebrow">Try it <span aria-hidden="true">·</span> <span class="jp">語順</span></p>
-        <h2>Hear a sentence the way an interpreter does.</h2>
-        <p>Japanese is Subject–Object–<em>Verb</em>. Reveal one word at a time and watch the English "best guess" panel: the interpreter learns the topic, the deadline, the action — but not <em>whether it happens</em> until the final word. Watch how little they can safely commit to along the way.</p>
+        <p class="eyebrow" data-t="s1Eyebrow">Try it <span aria-hidden="true">·</span> <span class="jp">語順</span></p>
+        <h2 data-t="s1H2">Hear a sentence the way an interpreter does.</h2>
+        <p data-t="s1P">Japanese is Subject–Object–<em>Verb</em>. Reveal one word at a time and watch the English "best guess" panel: the interpreter learns the topic, the deadline, the action — but not <em>whether it happens</em> until the final word. Watch how little they can safely commit to along the way.</p>
       </div>
 
       <div class="sim reveal">
-        <p class="sim-label">Live interpretation · word by word</p>
-        <h3 class="sim-title" id="sim1-title">「その件、明日までに対応…？」</h3>
+        <p class="sim-label" data-t="s1SimLabel">Live interpretation · word by word</p>
+        <h3 class="sim-title">「その件、明日までに対応…？」</h3>
 
         <div class="stream" id="stream" aria-live="polite"></div>
 
         <div class="meter-row">
-          <span class="cap">What the interpreter can safely say</span>
+          <span class="cap" data-t="s1MeterCap">What the interpreter can safely say</span>
           <span class="meter"><i id="meter"></i></span>
           <span class="meter-val" id="meterVal">0%</span>
         </div>
 
         <div class="guess" id="guess">
-          <p class="who">Interpreter's running English</p>
-          <p class="said" id="said"><span class="dim">(waiting for the first word…)</span></p>
-          <p class="note" id="note">Press <b>Reveal next word</b> to begin.</p>
+          <p class="who" data-t="s1GuessWho">Interpreter's running English</p>
+          <p class="said" id="said"></p>
+          <p class="note" id="note"></p>
         </div>
 
         <div class="controls">
-          <button class="btn" id="next">Reveal next word <span class="k">▶</span></button>
-          <button class="btn ghost" id="reset">Start over</button>
+          <button class="btn" id="next"><span data-t="s1Next">Reveal next word</span> <span class="k">▶</span></button>
+          <button class="btn ghost" id="reset" data-t="s1Reset">Start over</button>
         </div>
 
         <div class="flip-box" id="flipBox">
-          <p class="lead">The very last word decided everything. <b>Flip the ending</b> — the interpreter can't know which one is coming until it arrives:</p>
-          <div class="seg" role="group" aria-label="Choose the sentence ending">
-            <button data-pol="pos" aria-pressed="true">できます<span class="en">…can</span></button>
-            <button data-pol="neg" aria-pressed="false">できません<span class="en">…cannot</span></button>
+          <p class="lead" data-t="s1FlipLead">The very last word decided everything. <b>Flip the ending</b> — the interpreter can't know which one is coming until it arrives:</p>
+          <div class="seg" role="group" aria-label="ending">
+            <button type="button" data-pol="pos" aria-pressed="true">できます<span class="en">…can</span></button>
+            <button type="button" data-pol="neg" aria-pressed="false">できません<span class="en">…cannot</span></button>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- INTERACTIVE 2: dropped subject -->
+  <!-- INTERACTIVE 2 -->
   <section>
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="eyebrow">Try it <span aria-hidden="true">·</span> <span class="jp">主語の省略</span></p>
-        <h2>One sentence. Whose job is it?</h2>
-        <p>Japanese routinely drops the subject when it feels obvious from context. English grammar refuses to — so the interpreter has to <em>pick someone</em>, live. Same Japanese below; tap a subject and watch four different English commitments appear.</p>
+        <p class="eyebrow" data-t="s2Eyebrow">Try it <span aria-hidden="true">·</span> <span class="jp">主語の省略</span></p>
+        <h2 data-t="s2H2">One sentence. Whose job is it?</h2>
+        <p data-t="s2P">Japanese routinely drops the subject when it feels obvious from context. English grammar refuses to — so the interpreter has to <em>pick someone</em>, live. Same Japanese below; tap a subject and watch four different English commitments appear.</p>
       </div>
 
       <div class="sim reveal">
-        <p class="sim-label">Same input · four possible outputs</p>
+        <p class="sim-label" data-t="s2SimLabel">Same input · four possible outputs</p>
         <div class="subj-jp">
           <p class="big">わかりました。やっておきます。</p>
-          <p class="rom">wakarimashita. yatte-okimasu.  —  "understood. will do it (in advance)."</p>
+          <p class="rom" data-t="s2Rom">wakarimashita. yatte-okimasu.  —  "understood. will do it (in advance)."</p>
         </div>
-        <div class="subj-chips" role="group" aria-label="Choose who the subject is">
-          <span class="lbl">Who is "will do it"?</span>
-          <button class="chip" data-i="0" aria-pressed="true">I</button>
-          <button class="chip" data-i="1" aria-pressed="false">We</button>
-          <button class="chip" data-i="2" aria-pressed="false">She</button>
-          <button class="chip" data-i="3" aria-pressed="false">The vendor</button>
+        <div class="subj-chips" role="group" aria-label="subject">
+          <span class="lbl" data-t="s2ChipsLbl">Who is "will do it"?</span>
+          <button type="button" class="chip" data-i="0" aria-pressed="true" data-t="s2Chip0">I</button>
+          <button type="button" class="chip" data-i="1" aria-pressed="false" data-t="s2Chip1">We</button>
+          <button type="button" class="chip" data-i="2" aria-pressed="false" data-t="s2Chip2">She</button>
+          <button type="button" class="chip" data-i="3" aria-pressed="false" data-t="s2Chip3">The vendor</button>
         </div>
         <div class="subj-out">
-          <p class="who">The interpreter has to commit to</p>
+          <p class="who" data-t="s2OutWho">The interpreter has to commit to</p>
           <p class="said" id="subjOut">"Understood. I'll take care of it."</p>
         </div>
-        <p class="note" style="margin-top:14px; font-size:14px; color:var(--ink-soft);">Nothing in the Japanese distinguishes these. Guess wrong and you've just assigned an action item to the wrong person — a common way meetings quietly go sideways.</p>
+        <p class="note foot" data-t="s2Foot">Nothing in the Japanese distinguishes these. Guess wrong and you've just assigned an action item to the wrong person — a common way meetings quietly go sideways.</p>
       </div>
     </div>
   </section>
 
-  <!-- WHY IT'S HARD -->
+  <!-- CARDS -->
   <section>
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="eyebrow">More quirks <span aria-hidden="true">·</span> <span class="jp">難しい理由</span></p>
-        <h2>The rest of the obstacle course.</h2>
-        <p>Each of these makes the interpreter hold ambiguity in their head while you keep talking.</p>
+        <p class="eyebrow" data-t="s3Eyebrow">More quirks <span aria-hidden="true">·</span> <span class="jp">難しい理由</span></p>
+        <h2 data-t="s3H2">The rest of the obstacle course.</h2>
+        <p data-t="s3P">Each of these makes the interpreter hold ambiguity in their head while you keep talking.</p>
       </div>
       <div class="cards reveal">
         <div class="card">
           <span class="num">01</span>
-          <h3>Negation hides at the end<span class="jp">否定は文末</span></h3>
-          <p>You just saw it: <span class="ex">できます / できません</span>, <span class="ex">行く / 行かない</span>. Whether a sentence is yes or no is decided by its final syllables.</p>
+          <h3><span data-t="c1t">Negation hides at the end</span><span class="sub" data-t="c1s">否定は文末</span></h3>
+          <p data-t="c1b">You just saw it: <span class="ex">できます / できません</span>, <span class="ex">行く / 行かない</span>. Whether a sentence is yes or no is decided by its final syllables.</p>
         </div>
         <div class="card">
           <span class="num">02</span>
-          <h3>Politeness levels<span class="jp">敬語</span></h3>
-          <p>Honorific, humble, and plain registers encode who ranks where. English has no equivalent, so the nuance is flattened away or spelled out with extra words and time.</p>
+          <h3><span data-t="c2t">Politeness levels</span><span class="sub" data-t="c2s">敬語</span></h3>
+          <p data-t="c2b">Honorific, humble, and plain registers encode who ranks where. English has no equivalent, so the nuance is flattened away or spelled out with extra words and time.</p>
         </div>
         <div class="card">
           <span class="num">03</span>
-          <h3>"Hai" isn't "yes"<span class="jp">相槌</span></h3>
-          <p><span class="ex">はい・ええ・なるほど</span> are backchannels meaning "I'm listening," not "I agree." Read as agreement, they manufacture consensus no one gave.</p>
+          <h3><span data-t="c3t">"Hai" isn't "yes"</span><span class="sub" data-t="c3s">相槌</span></h3>
+          <p data-t="c3b"><span class="ex">はい・ええ・なるほど</span> are backchannels meaning "I'm listening," not "I agree." Read as agreement, they manufacture consensus no one gave.</p>
         </div>
         <div class="card">
           <span class="num">04</span>
-          <h3>Counters change numbers<span class="jp">助数詞</span></h3>
-          <p>"One" is <span class="ex">一本・一枚・一匹・一つ</span> depending on what you're counting. The interpreter needs the noun before they can even say the number.</p>
+          <h3><span data-t="c4t">Counters change numbers</span><span class="sub" data-t="c4s">助数詞</span></h3>
+          <p data-t="c4b">"One" is <span class="ex">一本・一枚・一匹・一つ</span> depending on what you're counting. The interpreter needs the noun before they can even say the number.</p>
         </div>
         <div class="card">
           <span class="num">05</span>
-          <h3>Homophones everywhere<span class="jp">同音異義語</span></h3>
-          <p><span class="ex">はし</span> is bridge, chopsticks, or edge (橋・箸・端). Only context — sometimes not yet spoken — tells them apart.</p>
+          <h3><span data-t="c5t">Homophones everywhere</span><span class="sub" data-t="c5s">同音異義語</span></h3>
+          <p data-t="c5b"><span class="ex">はし</span> is bridge, chopsticks, or edge (橋・箸・端). Only context — sometimes not yet spoken — tells them apart.</p>
         </div>
         <div class="card">
           <span class="num">06</span>
-          <h3>Topic vs. subject<span class="jp">「は」と「が」</span></h3>
-          <p>The particles <span class="ex">は</span> and <span class="ex">が</span> shift emphasis and what's "given" vs. "new" in ways English marks with word order and stress instead.</p>
+          <h3><span data-t="c6t">Topic vs. subject</span><span class="sub" data-t="c6s">「は」と「が」</span></h3>
+          <p data-t="c6b">The particles <span class="ex">は</span> and <span class="ex">が</span> shift emphasis and what's "given" vs. "new" in ways English marks with word order and stress instead.</p>
         </div>
       </div>
     </div>
@@ -398,17 +374,17 @@
   <section class="band">
     <div class="wrap">
       <div class="sec-head reveal in">
-        <p class="eyebrow">For everyone in the room <span aria-hidden="true">·</span> <span class="jp">全員へ</span></p>
-        <h2>Speak so the interpreter can keep up.</h2>
-        <p>These habits help whichever direction you're speaking — and they help <em>human interpreters and live AI captioning alike.</em></p>
+        <p class="eyebrow" data-t="s4Eyebrow">For everyone in the room <span aria-hidden="true">·</span> <span class="jp">全員へ</span></p>
+        <h2 data-t="s4H2">Speak so the interpreter can keep up.</h2>
+        <p data-t="s4P">These habits help whichever direction you're speaking — and they help <em>human interpreters and live AI captioning alike.</em></p>
       </div>
       <div class="rules reveal in">
-        <div class="rule"><span class="k">01</span><div><p class="t">One idea per sentence</p><p class="d">Short sentences give the interpreter a place to catch up. Long run-ons force them to buffer everything at once.</p></div></div>
-        <div class="rule"><span class="k">02</span><div><p class="t">Pause at full stops</p><p class="d">Finish a thought, then leave a beat of silence. That gap is where the rendering actually happens.</p></div></div>
-        <div class="rule"><span class="k">03</span><div><p class="t">One speaker at a time</p><p class="d">Overlapping voices can't both be interpreted. Wait for the rendering to finish before you reply.</p></div></div>
-        <div class="rule"><span class="k">04</span><div><p class="t">Share materials first</p><p class="d">Agenda, slides, names, and key terms in advance let the interpreter prepare vocabulary instead of improvising it.</p></div></div>
-        <div class="rule"><span class="k">05</span><div><p class="t">Spell out names &amp; numbers</p><p class="d">Say acronyms in full the first time; repeat critical figures and dates slowly. Numbers have no context to recover them from.</p></div></div>
-        <div class="rule"><span class="k">06</span><div><p class="t">Drop idioms &amp; jokes</p><p class="d">"Circle back," "ballpark," puns, and sports metaphors don't cross over. Say the plain meaning instead.</p></div></div>
+        <div class="rule"><span class="k">01</span><div><p class="t" data-t="r1t">One idea per sentence</p><p class="d" data-t="r1d">Short sentences give the interpreter a place to catch up. Long run-ons force them to buffer everything at once.</p></div></div>
+        <div class="rule"><span class="k">02</span><div><p class="t" data-t="r2t">Pause at full stops</p><p class="d" data-t="r2d">Finish a thought, then leave a beat of silence. That gap is where the rendering actually happens.</p></div></div>
+        <div class="rule"><span class="k">03</span><div><p class="t" data-t="r3t">One speaker at a time</p><p class="d" data-t="r3d">Overlapping voices can't both be interpreted. Wait for the rendering to finish before you reply.</p></div></div>
+        <div class="rule"><span class="k">04</span><div><p class="t" data-t="r4t">Share materials first</p><p class="d" data-t="r4d">Agenda, slides, names, and key terms in advance let the interpreter prepare vocabulary instead of improvising it.</p></div></div>
+        <div class="rule"><span class="k">05</span><div><p class="t" data-t="r5t">Spell out names &amp; numbers</p><p class="d" data-t="r5d">Say acronyms in full the first time; repeat critical figures and dates slowly. Numbers have no context to recover them from.</p></div></div>
+        <div class="rule"><span class="k">06</span><div><p class="t" data-t="r6t">Drop idioms &amp; jokes</p><p class="d" data-t="r6d">"Circle back," "ballpark," puns, and sports metaphors don't cross over. Say the plain meaning instead.</p></div></div>
       </div>
     </div>
   </section>
@@ -417,35 +393,35 @@
   <section>
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="eyebrow">Depends on your language <span aria-hidden="true">·</span> <span class="jp">話す言語別</span></p>
-        <h2>Then, a few things just for your side.</h2>
-        <p>The hardest gaps run in one direction. Pick the track for the language you speak.</p>
+        <p class="eyebrow" data-t="s5Eyebrow">Depends on your language <span aria-hidden="true">·</span> <span class="jp">話す言語別</span></p>
+        <h2 data-t="s5H2">Then, a few things just for your side.</h2>
+        <p data-t="s5P">The hardest gaps run in one direction. Pick the track for the language you speak.</p>
       </div>
       <div class="tracks reveal">
         <div class="track jp">
           <div class="track-head">
-            <div class="who"><h3>If you speak Japanese</h3><span class="dir">JP → EN</span></div>
-            <p><span class="jp">日本語で話す人へ</span> — help your ideas survive the trip into English.</p>
+            <div class="who"><h3 data-t="tjpH3">If you speak Japanese</h3><span class="dir">JP → EN</span></div>
+            <p data-t="tjpP"><span class="jp">日本語で話す人へ</span> — help your ideas survive the trip into English.</p>
           </div>
           <ul>
-            <li><span class="chk" aria-hidden="true">→</span><span class="tx"><b>Say the subject out loud.</b> Name who or what you mean (<span class="jp">誰が・何が</span>), even when it feels obvious. English can't leave it blank.</span></li>
-            <li><span class="chk" aria-hidden="true">→</span><span class="tx"><b>Conclusion first.</b> <span class="jp">結論から</span> — state the result, then the reasons, so no one waits for the verb.</span></li>
-            <li><span class="chk" aria-hidden="true">→</span><span class="tx"><b>Finish your sentences.</b> Avoid trailing off with <span class="jp">「…が。」「…けど。」</span> The ending carries the meaning.</span></li>
-            <li><span class="chk" aria-hidden="true">→</span><span class="tx"><b>Ease off stacked keigo.</b> Clear, plainly polite speech renders faster than layered honorifics.</span></li>
-            <li><span class="chk" aria-hidden="true">→</span><span class="tx"><b>Break up long modifiers.</b> Split a big <span class="jp">「〜という〜」</span> clause into two short sentences.</span></li>
+            <li><span class="chk" aria-hidden="true">→</span><span class="tx" data-t="tjp1"><b>Say the subject out loud.</b> Name who or what you mean (<span class="jp">誰が・何が</span>), even when it feels obvious. English can't leave it blank.</span></li>
+            <li><span class="chk" aria-hidden="true">→</span><span class="tx" data-t="tjp2"><b>Conclusion first.</b> <span class="jp">結論から</span> — state the result, then the reasons, so no one waits for the verb.</span></li>
+            <li><span class="chk" aria-hidden="true">→</span><span class="tx" data-t="tjp3"><b>Finish your sentences.</b> Avoid trailing off with <span class="jp">「…が。」「…けど。」</span> The ending carries the meaning.</span></li>
+            <li><span class="chk" aria-hidden="true">→</span><span class="tx" data-t="tjp4"><b>Ease off stacked keigo.</b> Clear, plainly polite speech renders faster than layered honorifics.</span></li>
+            <li><span class="chk" aria-hidden="true">→</span><span class="tx" data-t="tjp5"><b>Break up long modifiers.</b> Split a big <span class="jp">「〜という〜」</span> clause into two short sentences.</span></li>
           </ul>
         </div>
         <div class="track en">
           <div class="track-head">
-            <div class="who"><h3>If you speak English</h3><span class="dir">EN → JP</span></div>
-            <p><span class="jp">英語で話す人へ</span> — most English speakers simply go too fast.</p>
+            <div class="who"><h3 data-t="tenH3">If you speak English</h3><span class="dir">EN → JP</span></div>
+            <p data-t="tenP"><span class="jp">英語で話す人へ</span> — most English speakers simply go too fast.</p>
           </div>
           <ul>
-            <li><span class="chk" aria-hidden="true">→</span><span class="tx"><b>Slow down and chunk.</b> Native pace is faster than anyone can render live. Deliver in short, complete pieces.</span></li>
-            <li><span class="chk" aria-hidden="true">→</span><span class="tx"><b>Cut the idioms.</b> "Low-hanging fruit," "let's table this," "ballpark" — say the literal thing you mean.</span></li>
-            <li><span class="chk" aria-hidden="true">→</span><span class="tx"><b>One clause at a time.</b> Avoid long chains of subordinate clauses ("which, given that…, means…").</span></li>
-            <li><span class="chk" aria-hidden="true">→</span><span class="tx"><b>Pause after questions.</b> Give room for the question to be rendered and the answer to come back before you fill the silence.</span></li>
-            <li><span class="chk" aria-hidden="true">→</span><span class="tx"><b>Don't answer early.</b> Wait for the full interpretation to finish — the last few words may change the meaning.</span></li>
+            <li><span class="chk" aria-hidden="true">→</span><span class="tx" data-t="ten1"><b>Slow down and chunk.</b> Native pace is faster than anyone can render live. Deliver in short, complete pieces.</span></li>
+            <li><span class="chk" aria-hidden="true">→</span><span class="tx" data-t="ten2"><b>Cut the idioms.</b> "Low-hanging fruit," "let's table this," "ballpark" — say the literal thing you mean.</span></li>
+            <li><span class="chk" aria-hidden="true">→</span><span class="tx" data-t="ten3"><b>One clause at a time.</b> Avoid long chains of subordinate clauses ("which, given that…, means…").</span></li>
+            <li><span class="chk" aria-hidden="true">→</span><span class="tx" data-t="ten4"><b>Pause after questions.</b> Give room for the question to be rendered and the answer to come back before you fill the silence.</span></li>
+            <li><span class="chk" aria-hidden="true">→</span><span class="tx" data-t="ten5"><b>Don't answer early.</b> Wait for the full interpretation to finish — the last few words may change the meaning.</span></li>
           </ul>
         </div>
       </div>
@@ -455,38 +431,155 @@
 
 <footer>
   <div class="wrap">
-    <span>A field guide for multilingual meetings — help your interpreter, and they'll help you.</span>
+    <span data-t="footText">A field guide for multilingual meetings — help your interpreter, and they'll help you.</span>
     <span class="mono" aria-hidden="true">語順 · 主語 · 敬語 · 間</span>
   </div>
 </footer>
 
 <script>
   (function () {
-    /* ---- reveal on scroll ---- */
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var revealEls = document.querySelectorAll('.reveal:not(.in)');
-    if (!('IntersectionObserver' in window) || reduce) {
-      revealEls.forEach(function (el) { el.classList.add('in'); });
-    } else {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-      revealEls.forEach(function (el) { io.observe(el); });
+
+    /* ================= i18n ================= */
+    /* English is harvested from the DOM (single source); only Japanese is authored here. */
+    var EN = {};
+    document.querySelectorAll('[data-t]').forEach(function (el) { EN[el.dataset.t] = el.innerHTML; });
+
+    var JA = {
+      brandSub: '日英通訳',
+      heroEyebrow: 'リアルタイム通訳',
+      heroH1: '通訳者はいつも、<em>動詞ひとつ分うしろにいる。</em>',
+      heroSub: '日英のリアルタイム通訳が遅れるのは、通訳者が遅いからではありません。二つの言語は語順が正反対だからです。下で実際に体験して、話し方しだいで通訳がぐっと楽になることを確かめてください。',
+      heroMark: '話す · 訳す',
+
+      s1Eyebrow: '体験する <span aria-hidden="true">·</span> <span class="jp">語順</span>',
+      s1H2: '通訳者と同じ順番で、文を聞いてみる。',
+      s1P: '日本語は「主語―目的語―<em>動詞</em>」の順です。単語を一つずつ表示して、英語の「暫定訳」パネルを見てください。通訳者は話題・期限・動作は分かっても、<em>それが実現するのか</em>は最後の一語まで分かりません。途中でどれだけ訳を確定できないか、確かめてみましょう。',
+      s1SimLabel: 'リアルタイム通訳 · 一語ずつ',
+      s1MeterCap: '通訳者が確実に言えること',
+      s1GuessWho: '通訳者の暫定的な英訳',
+      s1Next: '次の単語を表示',
+      s1Reset: '最初から',
+      s1FlipLead: '最後の一語が、すべてを決めました。<b>語尾を切り替えて</b>みてください。通訳者には、どちらが来るのか最後の瞬間まで分かりません：',
+
+      s2Eyebrow: '体験する <span aria-hidden="true">·</span> <span class="jp">主語の省略</span>',
+      s2H2: '同じ一文。さて、誰の担当？',
+      s2P: '日本語は、文脈で分かると思えば主語をふつうに省きます。英語の文法はそれを許しません——だから通訳者は、その場で<em>誰かを選ぶ</em>しかありません。下の日本語は同じまま。主語をタップすると、四通りの異なる英訳が現れます。',
+      s2SimLabel: '同じ入力 · 四通りの出力',
+      s2Rom: 'wakarimashita. yatte-okimasu. — 「わかった。（前もって）やっておく。」',
+      s2ChipsLbl: '「やっておきます」の主語は？',
+      s2Chip0: '私', s2Chip1: '私たち', s2Chip2: '彼女', s2Chip3: '取引先',
+      s2OutWho: '通訳者が確定させるしかない訳',
+      s2Foot: '日本語には、これらを区別する手がかりがありません。取り違えれば、担当（アクションアイテム）を別の人に割り当ててしまう——会議が静かにこじれる、よくある原因です。',
+
+      s3Eyebrow: 'そのほかの難所 <span aria-hidden="true">·</span> <span class="jp">難しい理由</span>',
+      s3H2: '残りの障害物コース。',
+      s3P: 'どれも、あなたが話し続けるあいだ、通訳者に「あいまいさ」を頭の中で抱えさせるものです。',
+      c1t: '否定は文末にひそむ', c1s: 'Negation',
+      c1b: 'さっき見たとおりです：<span class="ex">できます / できません</span>、<span class="ex">行く / 行かない</span>。文が肯定か否定かは、最後の数音で決まります。',
+      c2t: '敬語のレベル', c2s: 'Keigo',
+      c2b: '尊敬語・謙譲語・普通体は、誰が上で誰が下かを言葉に埋め込みます。英語に対応物はないので、ニュアンスは平らにならされるか、余分な語と時間をかけて説明されます。',
+      c3t: '「はい」は「yes」ではない', c3s: 'Aizuchi',
+      c3b: '<span class="ex">はい・ええ・なるほど</span>は「聞いていますよ」という相槌で、「同意します」ではありません。同意と受け取られると、誰も与えていない合意が作られてしまいます。',
+      c4t: '助数詞が数を変える', c4s: 'Counters',
+      c4b: '「1」は数えるものによって<span class="ex">一本・一枚・一匹・一つ</span>と変わります。通訳者は、数を言う前にまず名詞を知らなければなりません。',
+      c5t: '同音異義語だらけ', c5s: 'Homophones',
+      c5b: '<span class="ex">はし</span>は橋・箸・端のどれでもありえます。区別できるのは文脈だけ——しかも、まだ話されていないこともあります。',
+      c6t: '話題か、主語か', c6s: 'は / が',
+      c6b: '助詞の<span class="ex">は</span>と<span class="ex">が</span>は、強調や「既知／新情報」の区別を変えます。英語はそれを語順や強勢で表します。',
+
+      s4Eyebrow: '参加者全員へ <span aria-hidden="true">·</span> <span class="jp">全員へ</span>',
+      s4H2: '通訳者が追いつける話し方を。',
+      s4P: 'これらの習慣は、どちらの言語で話していても役立ちます——そして<em>人間の通訳者にも、AIのリアルタイム字幕にも同じように</em>効きます。',
+      r1t: '一文に、一つの内容', r1d: '短い文は、通訳者が追いつく余地を与えます。長い一続きの文は、すべてを一度に抱え込ませます。',
+      r2t: '句点で一拍おく', r2d: '一つの考えを言い切り、少し間をおく。その空白で、実際に訳が行われます。',
+      r3t: '話すのは一度に一人', r3d: '声が重なると、どちらも通訳できません。訳が終わってから返しましょう。',
+      r4t: '資料を事前に共有', r4d: '議題・スライド・名前・重要用語を前もって渡せば、通訳者はその場任せにせず語彙を準備できます。',
+      r5t: '名前と数字ははっきりと', r5d: '略語は初出で正式名を。重要な数値や日付はゆっくり繰り返す。数字は文脈から復元できません。',
+      r6t: '慣用句と冗談は控える', r6d: '「circle back」「ballpark」、ダジャレ、スポーツのたとえは伝わりません。素直な意味で言いましょう。',
+
+      s5Eyebrow: '話す言語ごとに <span aria-hidden="true">·</span> <span class="jp">話す言語別</span>',
+      s5H2: 'そのうえで、あなたの側だけのコツを少し。',
+      s5P: '最も大きなズレは一方向に生じます。自分が話す言語のトラックを選んでください。',
+      tjpH3: '日本語で話す人へ',
+      tjpP: 'あなたの考えが、英語への「旅」を無事に生き延びるように。',
+      tjp1: '<b>主語を口に出す。</b>誰が・何がなのかを、当たり前に思えても言葉にする。英語は空欄にできません。',
+      tjp2: '<b>結論から。</b>まず結果を、それから理由を。誰も動詞を待たずにすみます。',
+      tjp3: '<b>文を最後まで言い切る。</b>「…が。」「…けど。」と尻すぼみにしない。語尾が意味を担っています。',
+      tjp4: '<b>敬語を重ねすぎない。</b>丁寧でも簡潔な言い方のほうが、幾重もの敬語より速く訳せます。',
+      tjp5: '<b>長い修飾を分ける。</b>大きな「〜という〜」の節は、二つの短い文に分けましょう。',
+      tenH3: '英語で話す人へ',
+      tenP: '多くの英語話者は、単純にスピードが速すぎます。',
+      ten1: '<b>ゆっくり、区切って。</b>ネイティブの速さは、誰もリアルタイムでは訳しきれません。短く、完結した単位で話しましょう。',
+      ten2: '<b>慣用句を省く。</b>「low-hanging fruit」「let\'s table this」「ballpark」——文字どおりの意味で言いましょう。',
+      ten3: '<b>節は一つずつ。</b>従属節を長く連ねない（"which, given that…, means…"）。',
+      ten4: '<b>質問のあとは間をおく。</b>質問が訳され、答えが返ってくる余地を作ってから、沈黙を埋めましょう。',
+      ten5: '<b>早合点で答えない。</b>訳が最後まで終わるのを待つ——最後の数語で意味が変わることがあります。',
+
+      footText: '多言語会議のための実践ガイド——通訳者を助ければ、通訳者があなたを助けてくれます。'
+    };
+
+    /* Demo strings that JS renders dynamically (both languages authored). */
+    var DEMO = {
+      en: {
+        waiting: '▍ listening…',
+        saidInit: '<span class="dim">(waiting for the first word…)</span>',
+        noteInit: 'Press <b>Reveal next word</b> to begin.',
+        stepNotes: [
+          'A topic is marked — but nothing has happened to it yet.',
+          "A deadline. Still no verb, so you can't say what happens by then.",
+          'A noun — "handling." Can we? Can\'t we? The polarity is still coming.'
+        ],
+        endNote: { pos: 'Positive. A commitment made.', neg: 'Negative — the opposite promise. Decided by the last word.' },
+        finalSuffix: ' <b>Until this word, the interpreter had committed to almost nothing.</b>'
+      },
+      ja: {
+        waiting: '▍ 聞き取り中…',
+        saidInit: '<span class="dim">（最初の一語を待っています…）</span>',
+        noteInit: '<b>次の単語を表示</b>を押して始めてください。',
+        stepNotes: [
+          '話題は示されました——でも、まだ何も起きていません。',
+          '期限が出ました。でも動詞がないので、それまでに何が起きるかは言えません。',
+          '「対応」という名詞。できるのか、できないのか。肯定か否定かはまだ先です。'
+        ],
+        endNote: { pos: '肯定。約束が成立しました。', neg: '否定——正反対の約束です。最後の一語で決まります。' },
+        finalSuffix: ' <b>この一語まで、通訳者はほとんど何も確定できていませんでした。</b>'
+      }
+    };
+
+    var curLang = 'en';
+
+    function applyLang(lang) {
+      curLang = (lang === 'ja') ? 'ja' : 'en';
+      var dict = (curLang === 'ja') ? JA : EN;
+      document.querySelectorAll('[data-t]').forEach(function (el) {
+        var k = el.dataset.t;
+        var v = (dict[k] != null) ? dict[k] : EN[k];
+        if (v != null) el.innerHTML = v;
+      });
+      document.documentElement.setAttribute('data-lang', curLang);
+      document.documentElement.setAttribute('lang', curLang);
+      document.querySelectorAll('.lang button').forEach(function (b) {
+        b.setAttribute('aria-pressed', b.dataset.lang === curLang ? 'true' : 'false');
+      });
+      renderSim();
     }
 
-    /* ---- INTERACTIVE 1: word-by-word interpreter ---- */
-    var steps = [
-      { jp: 'その件は', g: 'that matter (topic)', say: 'That matter…', dim: '', commit: 8,
-        note: 'A topic is marked — but nothing has happened to it yet.' },
-      { jp: '明日までに', g: 'by tomorrow', say: 'That matter, by tomorrow…', dim: '', commit: 14,
-        note: 'A deadline. Still no verb, so you can\'t say what happens by then.' },
-      { jp: '対応', g: 'handling / response', say: 'handling that matter by tomorrow…', dim: '', commit: 24,
-        note: 'A noun — "handling." Can we? Can\'t we? The polarity is still coming.' }
+    document.querySelectorAll('.lang button').forEach(function (b) {
+      b.addEventListener('click', function () { applyLang(b.dataset.lang); });
+    });
+
+    /* ============== INTERACTIVE 1: word-by-word ============== */
+    var STEPS = [
+      { jp: 'その件は', g: 'that matter (topic)', commit: 8 },
+      { jp: '明日までに', g: 'by tomorrow', commit: 14 },
+      { jp: '対応', g: 'handling / response', commit: 24 }
     ];
-    var endings = {
-      pos: { jp: 'できます', g: 'can do', cls: 'pos', say: 'We <b>can</b> handle that by tomorrow.', note: 'Positive. A commitment made.' },
-      neg: { jp: 'できません', g: 'cannot do', cls: 'verb', say: 'We <b>cannot</b> handle that by tomorrow.', note: 'Negative — the opposite promise. Decided by the last word.' }
+    var ENDINGS = {
+      pos: { jp: 'できます', g: 'can do', cls: 'pos', say: 'We <b>can</b> handle that by tomorrow.' },
+      neg: { jp: 'できません', g: 'cannot do', cls: 'verb', say: 'We <b>cannot</b> handle that by tomorrow.' }
     };
+    var SAY = ['That matter…', 'That matter, by tomorrow…', 'handling that matter by tomorrow…'];
 
     var stream = document.getElementById('stream');
     var meter = document.getElementById('meter');
@@ -497,8 +590,9 @@
     var nextBtn = document.getElementById('next');
     var resetBtn = document.getElementById('reset');
     var flipBox = document.getElementById('flipBox');
+    var segBtns = Array.prototype.slice.call(flipBox.querySelectorAll('.seg button'));
     var pol = 'pos';
-    var idx = -1; // -1 = nothing revealed; 0..2 content; 3 = ending revealed
+    var idx = -1;
 
     function tokEl(jp, g, cls) {
       var d = document.createElement('div');
@@ -508,80 +602,61 @@
       d.appendChild(w); d.appendChild(gg);
       return d;
     }
-    function waitingEl() {
-      var s = document.createElement('span');
-      s.className = 'waiting'; s.textContent = '▍ listening…';
-      return s;
-    }
-    function setMeter(v, full) {
-      meter.style.width = v + '%';
-      meter.classList.toggle('full', !!full);
-      meterVal.textContent = v + '%';
-    }
+    function setMeter(v, full) { meter.style.width = v + '%'; meter.classList.toggle('full', !!full); meterVal.textContent = v + '%'; }
 
-    function render() {
+    function renderSim() {
+      var D = DEMO[curLang];
       stream.innerHTML = '';
       if (idx < 0) {
-        said.innerHTML = '<span class="dim">(waiting for the first word…)</span>';
-        note.innerHTML = 'Press <b>Reveal next word</b> to begin.';
+        var wait = document.createElement('span'); wait.className = 'waiting'; wait.textContent = D.waiting;
+        stream.appendChild(wait);
+        said.innerHTML = D.saidInit;
+        note.innerHTML = D.noteInit;
         guess.classList.remove('done');
         setMeter(0, false);
-        stream.appendChild(waitingEl());
         return;
       }
-      // content tokens
-      for (var i = 0; i <= Math.min(idx, steps.length - 1); i++) {
-        stream.appendChild(tokEl(steps[i].jp, steps[i].g));
-      }
-      if (idx < steps.length) {
-        // still in content phase
-        stream.appendChild(waitingEl());
-        var s = steps[idx];
-        said.innerHTML = s.say + ' <span class="dim">…?</span>';
-        note.textContent = s.note;
+      for (var i = 0; i <= Math.min(idx, STEPS.length - 1); i++) stream.appendChild(tokEl(STEPS[i].jp, STEPS[i].g));
+      if (idx < STEPS.length) {
+        var w2 = document.createElement('span'); w2.className = 'waiting'; w2.textContent = D.waiting;
+        stream.appendChild(w2);
+        said.innerHTML = SAY[idx] + ' <span class="dim">…?</span>';
+        note.innerHTML = D.stepNotes[idx];
         guess.classList.remove('done');
-        setMeter(s.commit, false);
+        setMeter(STEPS[idx].commit, false);
       } else {
-        // ending revealed
-        var e = endings[pol];
+        var e = ENDINGS[pol];
         stream.appendChild(tokEl(e.jp, e.g, e.cls));
         said.innerHTML = e.say;
-        note.innerHTML = e.note + ' <b>Until this word, the interpreter had committed to almost nothing.</b>';
+        note.innerHTML = D.endNote[pol] + D.finalSuffix;
         guess.classList.add('done');
-        setMeter(100, pol === 'pos');
+        setMeter(100, true);
       }
     }
 
     nextBtn.addEventListener('click', function () {
-      if (idx >= steps.length) return;
+      if (idx >= STEPS.length) return;
       idx++;
-      render();
-      if (idx >= steps.length) {
-        nextBtn.disabled = true;
-        flipBox.classList.add('show');
-      }
+      renderSim();
+      if (idx >= STEPS.length) { nextBtn.disabled = true; flipBox.classList.add('show'); }
     });
     resetBtn.addEventListener('click', function () {
       idx = -1; pol = 'pos';
       nextBtn.disabled = false;
       flipBox.classList.remove('show');
-      segBtns.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.pol === 'pos'); });
-      render();
+      segBtns.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.pol === 'pos' ? 'true' : 'false'); });
+      renderSim();
     });
-
-    var segBtns = Array.prototype.slice.call(flipBox.querySelectorAll('.seg button'));
     segBtns.forEach(function (b) {
       b.addEventListener('click', function () {
         pol = b.dataset.pol;
-        segBtns.forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
-        if (idx >= steps.length) render();
+        segBtns.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        if (idx >= STEPS.length) renderSim();
       });
     });
 
-    render();
-
-    /* ---- INTERACTIVE 2: dropped subject ---- */
-    var subjSentences = [
+    /* ============== INTERACTIVE 2: dropped subject ============== */
+    var SUBJ = [
       '"Understood. I\'ll take care of it."',
       '"Understood. We\'ll take care of it."',
       '"Understood. She\'ll take care of it."',
@@ -591,9 +666,23 @@
     var chips = Array.prototype.slice.call(document.querySelectorAll('.subj-chips .chip'));
     chips.forEach(function (c) {
       c.addEventListener('click', function () {
-        chips.forEach(function (x) { x.setAttribute('aria-pressed', x === c); });
-        subjOut.textContent = subjSentences[+c.dataset.i];
+        chips.forEach(function (x) { x.setAttribute('aria-pressed', x === c ? 'true' : 'false'); });
+        subjOut.textContent = SUBJ[+c.dataset.i];
       });
     });
+
+    /* ============== reveal on scroll ============== */
+    var revealEls = document.querySelectorAll('.reveal:not(.in)');
+    if (!('IntersectionObserver' in window) || reduce) {
+      revealEls.forEach(function (el) { el.classList.add('in'); });
+    } else {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      revealEls.forEach(function (el) { io.observe(el); });
+    }
+
+    /* init — change 'en' to 'ja' here to open in Japanese by default */
+    applyLang('en');
   })();
 </script>
