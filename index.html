@@ -174,6 +174,33 @@
   .card p { margin: 0; font-size: 14.5px; color: var(--ink-soft); line-height: 1.58; }
   .card p .ex { font-family: var(--jp-sans); color: var(--ink); }
 
+  /* ---------- GOOGLE MEET HIGHLIGHT ---------- */
+  section.meet { background: color-mix(in srgb, var(--vermilion) 5%, var(--paper)); }
+  .meet em { font-style: normal; font-weight: 600; }
+  .meet-lead {
+    display: grid; grid-template-columns: auto 1fr; gap: 16px 24px; align-items: start;
+    background: var(--vermilion-wash);
+    border: 1px solid color-mix(in srgb, var(--vermilion) 32%, transparent);
+    border-left: 4px solid var(--vermilion); border-radius: 14px;
+    padding: clamp(20px, 3vw, 30px); box-shadow: var(--shadow);
+  }
+  @media (max-width: 620px) { .meet-lead { grid-template-columns: 1fr; } }
+  .meet-lead .tag {
+    font-family: var(--mono); font-size: 12px; letter-spacing: .1em; color: var(--vermilion-ink);
+    border: 1px solid var(--vermilion); border-radius: 999px; padding: 6px 13px;
+    white-space: nowrap; align-self: start; justify-self: start;
+  }
+  .meet-lead h3 { margin: 0; font-size: clamp(20px, 2.7vw, 27px); color: var(--ink); letter-spacing: -0.01em; }
+  .meet-lead p { margin: 11px 0 0; color: var(--ink-soft); font-size: 15.5px; }
+  .meet-lead em { color: var(--vermilion-ink); }
+  .meet-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 16px; }
+  @media (max-width: 720px) { .meet-grid { grid-template-columns: 1fr; } }
+  .meet-item { background: var(--card); border: 1px solid var(--line); border-radius: 13px; padding: 22px; display: flex; flex-direction: column; gap: 8px; }
+  .meet-item .k { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--vermilion); }
+  .meet-item h3 { font-size: 19px; margin: 0; }
+  .meet-item p { margin: 0; font-size: 14.5px; color: var(--ink-soft); line-height: 1.58; }
+  .meet-item p .ex { font-family: var(--jp-sans); color: var(--ink); }
+
   .band { border-top: none; }
   :root[data-theme="light"] .band { background: var(--indigo); }
   :root[data-theme="dark"] .band { background: #1a2740; }
@@ -370,6 +397,48 @@
     </div>
   </section>
 
+  <!-- GOOGLE MEET HIGHLIGHT -->
+  <section class="meet">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow" data-t="meetEyebrow">Your primary tool <span aria-hidden="true">·</span> Google Meet</p>
+        <h2 data-t="meetH2">Why this matters even more on Google Meet.</h2>
+        <p data-t="meetP">The habits above help with any interpreter, human or machine. But Google Meet's translation works in a specific way — and one detail changes how you should use it.</p>
+      </div>
+
+      <div class="meet-lead reveal">
+        <span class="tag" data-t="meetLeadTag">JP ⇄ EN</span>
+        <div>
+          <h3 data-t="meetLeadT">You'll read captions, not hear a voice.</h3>
+          <p data-t="meetLeadB">Meet's spoken translation — the synthetic voice — doesn't cover Japanese. Japanese⇄English runs as <em>translated text captions</em>: each person sets their own caption language and reads along. So the goal is clean text appearing on screen, fast enough to follow — which is exactly what these tips protect.</p>
+        </div>
+      </div>
+
+      <div class="meet-grid reveal">
+        <div class="meet-item">
+          <span class="k" data-t="m1k">Audio in</span>
+          <h3 data-t="m1t">It transcribes first, then translates.</h3>
+          <p data-t="m1b">Meet turns speech into text <em>before</em> translating it. A weak mic, room noise, or two people at once corrupts the transcript first — and the translation faithfully carries the error downstream. Good audio and one speaker at a time matter more here than anywhere.</p>
+        </div>
+        <div class="meet-item">
+          <span class="k" data-t="m2k">Live rewrite</span>
+          <h3 data-t="m2t">The caption rewrites itself as you talk.</h3>
+          <p data-t="m2b">Meet shows a running guess and revises earlier words as more speech arrives. Because Japanese saves the verb for last, a caption can read as "yes" and then flip to "no" — the <span class="ex">できます → できません</span> flip from the demo, live on screen. Finish the sentence, then pause and let the text settle.</p>
+        </div>
+        <div class="meet-item">
+          <span class="k" data-t="m3k">Latency</span>
+          <h3 data-t="m3t">There's a few-second lag — wait for it.</h3>
+          <p data-t="m3b">The caption trails the speaker by a beat, and Meet shows an indicator while it catches up. Don't reply the instant someone stops — the line you're answering may not have finished translating.</p>
+        </div>
+        <div class="meet-item">
+          <span class="k" data-t="m4k">Before you start</span>
+          <h3 data-t="m4t">Set it up before the meeting.</h3>
+          <p data-t="m4b">Translated captions need a paid Workspace plan (Business, Enterprise, or AI Pro) and are still rolling out. Each participant chooses their caption language in Settings, and captions only cover the part of the call you're present for — so join on time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SHARED RULES -->
   <section class="band">
     <div class="wrap">
@@ -487,6 +556,25 @@
       c5b: '<span class="ex">はし</span>は橋・箸・端のどれでもありえます。区別できるのは文脈だけ——しかも、まだ話されていないこともあります。',
       c6t: '話題か、主語か', c6s: 'は / が',
       c6b: '助詞の<span class="ex">は</span>と<span class="ex">が</span>は、強調や「既知／新情報」の区別を変えます。英語はそれを語順や強勢で表します。',
+
+      meetEyebrow: '主に使うツール <span aria-hidden="true">·</span> Google Meet',
+      meetH2: 'Google Meet では、これがさらに効いてくる。',
+      meetP: '上のコツは、人間でも機械でも、どんな通訳にも役立ちます。ただ Google Meet の翻訳には独特の仕組みがあり、ある一点が使い方を変えます。',
+      meetLeadTag: '日 ⇄ 英',
+      meetLeadT: '聞くのではなく、字幕を読むことになります。',
+      meetLeadB: 'Meet の音声翻訳——合成音声——は日本語に対応していません。日英は<em>翻訳字幕（テキスト）</em>として動きます。各自が自分の字幕言語を設定して読む形です。だから目標は、追える速さできれいなテキストが画面に出ること——これらのコツはまさにそれを守ります。',
+      m1k: '音声の入力',
+      m1t: 'まず文字起こし、それから翻訳。',
+      m1b: 'Meet は翻訳の<em>前</em>に、音声を文字に起こします。弱いマイク・雑音・同時発話は、まず文字起こしを壊し、翻訳はその誤りをそのまま下流へ運びます。良い音声と「一度に一人」は、ここでこそ効きます。',
+      m2k: 'リアルタイム書き換え',
+      m2t: '字幕は、話すそばから書き換わる。',
+      m2b: 'Meet は暫定的な訳を表示し、音声が続くにつれて前の語を修正します。日本語は動詞が最後なので、字幕がいったん「はい」と出てから「いいえ」に反転することも——デモの<span class="ex">できます → できません</span>が、そのまま画面で起きます。文を言い切り、少し止まって、テキストが落ち着くのを待ちましょう。',
+      m3k: '遅延',
+      m3t: '数秒の遅れがある——待つこと。',
+      m3b: '字幕は話者から一拍遅れ、Meet は追いつくあいだインジケーターを表示します。相手が止まった瞬間に返さないこと——あなたが答えようとしている行は、まだ訳し終わっていないかもしれません。',
+      m4k: '始める前に',
+      m4t: '会議の前に設定しておく。',
+      m4b: '翻訳字幕には有料の Workspace プラン（Business・Enterprise・AI Pro）が必要で、まだ順次展開中です。各参加者が設定で字幕言語を選び、字幕は自分が参加している間の部分しか出ません——だから時間どおりに参加を。',
 
       s4Eyebrow: '参加者全員へ <span aria-hidden="true">·</span> <span class="jp">全員へ</span>',
       s4H2: '通訳者が追いつける話し方を。',
