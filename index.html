@@ -202,12 +202,10 @@
   .rule .t { font-weight: 600; font-size: 16px; color: #fff; margin: 0; }
   .rule .d { font-size: 14px; color: rgba(255,255,255,.74); margin: 3px 0 0; }
 
-  .tracks { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  @media (max-width: 780px) { .tracks { grid-template-columns: 1fr; } }
-  [data-lang="en"] .track.en { order: -1; }
-  [data-lang="ja"] .track.jp { order: -1; }
-  .track { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--card); }
-  .track-head { padding: 22px 24px 20px; border-bottom: 1px solid var(--line); }
+  .tracks { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 720px; }
+  [data-lang="en"] .track.jp { display: none; }
+  [data-lang="ja"] .track.en { display: none; }
+  .track-head { padding: 0 0 16px; border-bottom: 1px solid var(--line-strong); }
   .track-head .who { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
   .track-head h3 { font-size: 22px; margin: 0; }
   .track-head .dir { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; white-space: nowrap; }
@@ -215,8 +213,8 @@
   .track.en .dir { color: var(--indigo-ink); background: var(--indigo-wash); }
   .track-head p { margin: 10px 0 0; font-size: 14px; color: var(--ink-soft); }
   .track-head p .jp { font-family: var(--jp-sans); }
-  .track ul { list-style: none; margin: 0; padding: 8px 24px 22px; }
-  .track li { display: flex; gap: 13px; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+  .track ul { list-style: none; margin: 0; padding: 6px 0 0; }
+  .track li { display: flex; gap: 13px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
   .track li:last-child { border-bottom: none; }
   .track li .chk { flex: none; color: var(--ink-faint); font-family: var(--mono); }
   .track li .tx { color: var(--ink-soft); }
@@ -436,7 +434,7 @@
       <div class="sec-head reveal">
         <p class="eyebrow" data-t="s5Eyebrow">Depends on your language <span aria-hidden="true">·</span> <span class="jp">話す言語別</span></p>
         <h2 data-t="s5H2">Then, a few things just for your side.</h2>
-        <p data-t="s5P">The hardest gaps run in one direction. Pick the track for the language you speak.</p>
+        <p data-t="s5P">The hardest gaps run in one direction — here's what helps most when you're the one speaking.</p>
       </div>
       <div class="tracks reveal">
         <div class="track jp">
@@ -554,7 +552,7 @@
 
       s5Eyebrow: '話す言語ごとに <span aria-hidden="true">·</span> <span class="jp">話す言語別</span>',
       s5H2: 'そのうえで、あなたの側だけのコツを少し。',
-      s5P: '最も大きなズレは一方向に生じます。自分が話す言語のトラックを選んでください。',
+      s5P: '最も大きなズレは一方向に生じます——あなたが話す側で、いちばん効くコツです。',
       tjpH3: '日本語で話す人へ',
       tjpP: 'あなたの考えが、英語への「旅」を無事に生き延びるように。',
       tjp1: '<b>主語を口に出す。</b>誰が・何がなのかを、当たり前に思えても言葉にする。英語は空欄にできません。',
