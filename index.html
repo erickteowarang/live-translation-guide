@@ -1,4 +1,4 @@
-<title>Why live JP⇄EN interpreting is hard</title>
+<title>Communicating across languages on Google Meet (JP⇄EN)</title>
 <style>
   :root {
     --paper: #F2F1ED;
@@ -255,7 +255,7 @@
 
 <div class="topbar">
   <div class="wrap bar">
-    <span class="brand"><span class="mk" aria-hidden="true"><span class="a">話</span><span class="b">訳</span></span> <span data-t="brandSub">JP⇄EN interpreting</span></span>
+    <span class="brand"><span class="mk" aria-hidden="true"><span class="a">話</span><span class="b">訳</span></span> <span data-t="brandSub">JP⇄EN captions</span></span>
     <div class="lang" role="group" aria-label="Language / 言語">
       <button type="button" data-lang="en" aria-pressed="true">EN</button>
       <button type="button" data-lang="ja" aria-pressed="false">日本語</button>
@@ -268,9 +268,9 @@
 <header class="hero">
   <div class="wrap hero-grid">
     <div class="reveal in">
-      <p class="eyebrow" data-t="heroEyebrow">通訳 <span aria-hidden="true">·</span> Real-time interpretation</p>
-      <h1 data-t="heroH1">The interpreter is always <em>one verb behind.</em></h1>
-      <p class="hero-sub" data-t="heroSub">Live Japanese⇄English interpreting isn't slow because the interpreter is slow. The two languages are built in opposite orders. Try it yourself below — then see how the way you speak can make it easier.</p>
+      <p class="eyebrow" data-t="heroEyebrow">Live translated captions <span aria-hidden="true">·</span> <span class="jp">ライブ字幕</span></p>
+      <h1 data-t="heroH1">Your captions are always <em>one verb behind.</em></h1>
+      <p class="hero-sub" data-t="heroSub">Meet's live Japanese⇄English captions don't lag because the translation is bad — the two languages are simply built in opposite orders. Try it yourself below, then see how the way you speak makes the captions keep up.</p>
     </div>
     <div class="hero-mark reveal in" aria-hidden="true">
       <span class="a">話</span><span class="b">訳</span>
@@ -280,29 +280,71 @@
 </header>
 
 <main>
+  <!-- GOOGLE MEET HIGHLIGHT -->
+  <section class="meet">
+    <div class="wrap">
+      <div class="sec-head reveal in">
+        <p class="eyebrow" data-t="meetEyebrow">Your primary tool <span aria-hidden="true">·</span> Google Meet</p>
+        <h2 data-t="meetH2">How Google Meet translates you — and where it struggles.</h2>
+        <p data-t="meetP">Your whole conversation runs through Meet's live translation. Here's how it builds those captions — and the one thing to know before anything else.</p>
+      </div>
+
+      <div class="meet-lead reveal in">
+        <span class="tag" data-t="meetLeadTag">JP ⇄ EN</span>
+        <div>
+          <h3 data-t="meetLeadT">You'll read captions, not hear a voice.</h3>
+          <p data-t="meetLeadB">Meet's spoken translation — the synthetic voice — doesn't cover Japanese. Japanese⇄English runs as <em>translated text captions</em>: each person sets their own caption language and reads along. So the goal is clean text appearing on screen, fast enough to follow — which is exactly what the rest of this page protects.</p>
+        </div>
+      </div>
+
+      <div class="meet-grid reveal">
+        <div class="meet-item">
+          <span class="k" data-t="m1k">Audio in</span>
+          <h3 data-t="m1t">It transcribes first, then translates.</h3>
+          <p data-t="m1b">Meet turns speech into text <em>before</em> translating it. A weak mic, room noise, or two people at once corrupts the transcript first — and the translation faithfully carries the error downstream. Good audio and one speaker at a time matter more here than anywhere.</p>
+        </div>
+        <div class="meet-item">
+          <span class="k" data-t="m2k">Live rewrite</span>
+          <h3 data-t="m2t">The caption rewrites itself as you talk.</h3>
+          <p data-t="m2b">Meet shows a running guess and revises earlier words as more speech arrives. Because Japanese saves the verb for last, a caption can read as "yes" and then flip to "no" — the same <span class="ex">できます → できません</span> flip you can try in the demo below. Finish the sentence, then pause and let the text settle.</p>
+        </div>
+        <div class="meet-item">
+          <span class="k" data-t="m3k">Latency</span>
+          <h3 data-t="m3t">There's a few-second lag — wait for it.</h3>
+          <p data-t="m3b">The caption trails the speaker by a beat, and Meet shows an indicator while it catches up. Don't reply the instant someone stops — the line you're answering may not have finished translating.</p>
+        </div>
+        <div class="meet-item">
+          <span class="k" data-t="m4k">Setup</span>
+          <h3 data-t="m4t">Each person sets their own captions.</h3>
+          <p data-t="m4b">Everyone chooses their caption language in <em>Settings → Captions</em> — the Japanese side reads Japanese, the English side reads English. Captions only cover the part of the call you're present for, so join on time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- INTERACTIVE 1 -->
   <section>
     <div class="wrap">
       <div class="sec-head reveal">
         <p class="eyebrow" data-t="s1Eyebrow">Try it <span aria-hidden="true">·</span> <span class="jp">語順</span></p>
-        <h2 data-t="s1H2">Hear a sentence the way an interpreter does.</h2>
-        <p data-t="s1P">Japanese is Subject–Object–<em>Verb</em>. Reveal one word at a time and watch the English "best guess" panel: the interpreter learns the topic, the deadline, the action — but not <em>whether it happens</em> until the final word. Watch how little they can safely commit to along the way.</p>
+        <h2 data-t="s1H2">Watch a caption the way Meet builds it.</h2>
+        <p data-t="s1P">Japanese is Subject–Object–<em>Verb</em>. Reveal one word at a time and watch the English caption panel: it gets the topic, the deadline, the action — but not <em>whether it happens</em> until the final word. Watch how little it can safely show along the way.</p>
       </div>
 
       <div class="sim reveal">
-        <p class="sim-label" data-t="s1SimLabel">Live interpretation · word by word</p>
+        <p class="sim-label" data-t="s1SimLabel">Live captions · word by word</p>
         <h3 class="sim-title">「その件、明日までに対応…？」</h3>
 
         <div class="stream" id="stream" aria-live="polite"></div>
 
         <div class="meter-row">
-          <span class="cap" data-t="s1MeterCap">What the interpreter can safely say</span>
+          <span class="cap" data-t="s1MeterCap">What the caption can safely show</span>
           <span class="meter"><i id="meter"></i></span>
           <span class="meter-val" id="meterVal">0%</span>
         </div>
 
         <div class="guess" id="guess">
-          <p class="who" data-t="s1GuessWho">Interpreter's running English</p>
+          <p class="who" data-t="s1GuessWho">The caption so far (English)</p>
           <p class="said" id="said"></p>
           <p class="note" id="note"></p>
         </div>
@@ -313,7 +355,7 @@
         </div>
 
         <div class="flip-box" id="flipBox">
-          <p class="lead" data-t="s1FlipLead">The very last word decided everything. <b>Flip the ending</b> — the interpreter can't know which one is coming until it arrives:</p>
+          <p class="lead" data-t="s1FlipLead">The very last word decided everything. <b>Flip the ending</b> — the caption can't know which one is coming until it arrives:</p>
           <div class="seg" role="group" aria-label="ending">
             <button type="button" data-pol="pos" aria-pressed="true">できます<span class="en">…can</span></button>
             <button type="button" data-pol="neg" aria-pressed="false">できません<span class="en">…cannot</span></button>
@@ -329,7 +371,7 @@
       <div class="sec-head reveal">
         <p class="eyebrow" data-t="s2Eyebrow">Try it <span aria-hidden="true">·</span> <span class="jp">主語の省略</span></p>
         <h2 data-t="s2H2">One sentence. Whose job is it?</h2>
-        <p data-t="s2P">Japanese routinely drops the subject when it feels obvious from context. English grammar refuses to — so the interpreter has to <em>pick someone</em>, live. Same Japanese below; tap a subject and watch four different English commitments appear.</p>
+        <p data-t="s2P">Japanese routinely drops the subject when it feels obvious from context. English grammar refuses to — so Meet has to <em>pick someone</em>, live. Same Japanese below; tap a subject and watch four different English captions appear.</p>
       </div>
 
       <div class="sim reveal">
@@ -346,7 +388,7 @@
           <button type="button" class="chip" data-i="3" aria-pressed="false" data-t="s2Chip3">The vendor</button>
         </div>
         <div class="subj-out">
-          <p class="who" data-t="s2OutWho">The interpreter has to commit to</p>
+          <p class="who" data-t="s2OutWho">The caption has to commit to</p>
           <p class="said" id="subjOut">"Understood. I'll take care of it."</p>
         </div>
         <p class="note foot" data-t="s2Foot">Nothing in the Japanese distinguishes these. Guess wrong and you've just assigned an action item to the wrong person — a common way meetings quietly go sideways.</p>
@@ -360,7 +402,7 @@
       <div class="sec-head reveal">
         <p class="eyebrow" data-t="s3Eyebrow">More quirks <span aria-hidden="true">·</span> <span class="jp">難しい理由</span></p>
         <h2 data-t="s3H2">The rest of the obstacle course.</h2>
-        <p data-t="s3P">Each of these makes the interpreter hold ambiguity in their head while you keep talking.</p>
+        <p data-t="s3P">Each of these forces the translation to guess while you keep talking.</p>
       </div>
       <div class="cards reveal">
         <div class="card">
@@ -381,7 +423,7 @@
         <div class="card">
           <span class="num">04</span>
           <h3><span data-t="c4t">Counters change numbers</span><span class="sub" data-t="c4s">助数詞</span></h3>
-          <p data-t="c4b">"One" is <span class="ex">一本・一枚・一匹・一つ</span> depending on what you're counting. The interpreter needs the noun before they can even say the number.</p>
+          <p data-t="c4b">"One" is <span class="ex">一本・一枚・一匹・一つ</span> depending on what you're counting. The caption needs the noun before it can even show the number.</p>
         </div>
         <div class="card">
           <span class="num">05</span>
@@ -397,61 +439,19 @@
     </div>
   </section>
 
-  <!-- GOOGLE MEET HIGHLIGHT -->
-  <section class="meet">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <p class="eyebrow" data-t="meetEyebrow">Your primary tool <span aria-hidden="true">·</span> Google Meet</p>
-        <h2 data-t="meetH2">Why this matters even more on Google Meet.</h2>
-        <p data-t="meetP">The habits above help with any interpreter, human or machine. But Google Meet's translation works in a specific way — and one detail changes how you should use it.</p>
-      </div>
-
-      <div class="meet-lead reveal">
-        <span class="tag" data-t="meetLeadTag">JP ⇄ EN</span>
-        <div>
-          <h3 data-t="meetLeadT">You'll read captions, not hear a voice.</h3>
-          <p data-t="meetLeadB">Meet's spoken translation — the synthetic voice — doesn't cover Japanese. Japanese⇄English runs as <em>translated text captions</em>: each person sets their own caption language and reads along. So the goal is clean text appearing on screen, fast enough to follow — which is exactly what these tips protect.</p>
-        </div>
-      </div>
-
-      <div class="meet-grid reveal">
-        <div class="meet-item">
-          <span class="k" data-t="m1k">Audio in</span>
-          <h3 data-t="m1t">It transcribes first, then translates.</h3>
-          <p data-t="m1b">Meet turns speech into text <em>before</em> translating it. A weak mic, room noise, or two people at once corrupts the transcript first — and the translation faithfully carries the error downstream. Good audio and one speaker at a time matter more here than anywhere.</p>
-        </div>
-        <div class="meet-item">
-          <span class="k" data-t="m2k">Live rewrite</span>
-          <h3 data-t="m2t">The caption rewrites itself as you talk.</h3>
-          <p data-t="m2b">Meet shows a running guess and revises earlier words as more speech arrives. Because Japanese saves the verb for last, a caption can read as "yes" and then flip to "no" — the <span class="ex">できます → できません</span> flip from the demo, live on screen. Finish the sentence, then pause and let the text settle.</p>
-        </div>
-        <div class="meet-item">
-          <span class="k" data-t="m3k">Latency</span>
-          <h3 data-t="m3t">There's a few-second lag — wait for it.</h3>
-          <p data-t="m3b">The caption trails the speaker by a beat, and Meet shows an indicator while it catches up. Don't reply the instant someone stops — the line you're answering may not have finished translating.</p>
-        </div>
-        <div class="meet-item">
-          <span class="k" data-t="m4k">Setup</span>
-          <h3 data-t="m4t">Each person sets their own captions.</h3>
-          <p data-t="m4b">Everyone chooses their caption language in <em>Settings → Captions</em> — the Japanese side reads Japanese, the English side reads English. Captions only cover the part of the call you're present for, so join on time.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- SHARED RULES -->
   <section class="band">
     <div class="wrap">
       <div class="sec-head reveal in">
         <p class="eyebrow" data-t="s4Eyebrow">For everyone in the room <span aria-hidden="true">·</span> <span class="jp">全員へ</span></p>
-        <h2 data-t="s4H2">Speak so the interpreter can keep up.</h2>
-        <p data-t="s4P">These habits help whichever direction you're speaking — and they help <em>human interpreters and live AI captioning alike.</em></p>
+        <h2 data-t="s4H2">Speak so the captions keep up.</h2>
+        <p data-t="s4P">These habits help whichever direction you're speaking — and they make Meet's <em>live captions markedly more accurate.</em></p>
       </div>
       <div class="rules reveal in">
-        <div class="rule"><span class="k">01</span><div><p class="t" data-t="r1t">One idea per sentence</p><p class="d" data-t="r1d">Short sentences give the interpreter a place to catch up. Long run-ons force them to buffer everything at once.</p></div></div>
+        <div class="rule"><span class="k">01</span><div><p class="t" data-t="r1t">One idea per sentence</p><p class="d" data-t="r1d">Short sentences give the captions a place to catch up. Long run-ons force everything to buffer at once.</p></div></div>
         <div class="rule"><span class="k">02</span><div><p class="t" data-t="r2t">Pause at full stops</p><p class="d" data-t="r2d">Finish a thought, then leave a beat of silence. That gap is where the rendering actually happens.</p></div></div>
-        <div class="rule"><span class="k">03</span><div><p class="t" data-t="r3t">One speaker at a time</p><p class="d" data-t="r3d">Overlapping voices can't both be interpreted. Wait for the rendering to finish before you reply.</p></div></div>
-        <div class="rule"><span class="k">04</span><div><p class="t" data-t="r4t">Share materials first</p><p class="d" data-t="r4d">Agenda, slides, names, and key terms in advance let the interpreter prepare vocabulary instead of improvising it.</p></div></div>
+        <div class="rule"><span class="k">03</span><div><p class="t" data-t="r3t">One speaker at a time</p><p class="d" data-t="r3d">Overlapping voices can't both be captioned. Wait for the captions to catch up before you reply.</p></div></div>
+        <div class="rule"><span class="k">04</span><div><p class="t" data-t="r4t">Share materials first</p><p class="d" data-t="r4d">Agenda, slides, names, and key terms in advance give everyone a reference when the captions mangle a specialized word.</p></div></div>
         <div class="rule"><span class="k">05</span><div><p class="t" data-t="r5t">Spell out names &amp; numbers</p><p class="d" data-t="r5d">Say acronyms in full the first time; repeat critical figures and dates slowly. Numbers have no context to recover them from.</p></div></div>
         <div class="rule"><span class="k">06</span><div><p class="t" data-t="r6t">Drop idioms &amp; jokes</p><p class="d" data-t="r6d">"Circle back," "ballpark," puns, and sports metaphors don't cross over. Say the plain meaning instead.</p></div></div>
       </div>
@@ -489,8 +489,8 @@
             <li><span class="chk" aria-hidden="true">→</span><span class="tx" data-t="ten1"><b>Slow down and chunk.</b> Native pace is faster than anyone can render live. Deliver in short, complete pieces.</span></li>
             <li><span class="chk" aria-hidden="true">→</span><span class="tx" data-t="ten2"><b>Cut the idioms.</b> "Low-hanging fruit," "let's table this," "ballpark" — say the literal thing you mean.</span></li>
             <li><span class="chk" aria-hidden="true">→</span><span class="tx" data-t="ten3"><b>One clause at a time.</b> Avoid long chains of subordinate clauses ("which, given that…, means…").</span></li>
-            <li><span class="chk" aria-hidden="true">→</span><span class="tx" data-t="ten4"><b>Pause after questions.</b> Give room for the question to be rendered and the answer to come back before you fill the silence.</span></li>
-            <li><span class="chk" aria-hidden="true">→</span><span class="tx" data-t="ten5"><b>Don't answer early.</b> Wait for the full interpretation to finish — the last few words may change the meaning.</span></li>
+            <li><span class="chk" aria-hidden="true">→</span><span class="tx" data-t="ten4"><b>Pause after questions.</b> Give room for the question to be captioned and the answer to come back before you fill the silence.</span></li>
+            <li><span class="chk" aria-hidden="true">→</span><span class="tx" data-t="ten5"><b>Don't answer early.</b> Wait for the caption to finish — the last few words may change the meaning.</span></li>
           </ul>
         </div>
       </div>
@@ -500,7 +500,7 @@
 
 <footer>
   <div class="wrap">
-    <span data-t="footText">A field guide for multilingual meetings — help your interpreter, and they'll help you.</span>
+    <span data-t="footText">A field guide for cross-language Google Meet — speak for the captions, and they'll speak for you.</span>
     <span class="mono" aria-hidden="true">語順 · 主語 · 敬語 · 間</span>
   </div>
 </footer>
@@ -515,35 +515,35 @@
     document.querySelectorAll('[data-t]').forEach(function (el) { EN[el.dataset.t] = el.innerHTML; });
 
     var JA = {
-      brandSub: '日英通訳',
-      heroEyebrow: 'リアルタイム通訳',
-      heroH1: '通訳者はいつも、<em>動詞ひとつ分うしろにいる。</em>',
-      heroSub: '日英のリアルタイム通訳が遅れるのは、通訳者が遅いからではありません。二つの言語は語順が正反対だからです。下で実際に体験して、話し方しだいで通訳がぐっと楽になることを確かめてください。',
+      brandSub: '日英字幕',
+      heroEyebrow: 'ライブ翻訳字幕',
+      heroH1: '字幕はいつも、<em>動詞ひとつ分うしろにいる。</em>',
+      heroSub: 'Meet の日英ライブ字幕が遅れるのは、翻訳の質が悪いからではありません。二つの言語は語順が正反対だからです。下で実際に体験して、話し方しだいで字幕がちゃんと追いつくことを確かめてください。',
       heroMark: '話す · 訳す',
 
       s1Eyebrow: '体験する <span aria-hidden="true">·</span> <span class="jp">語順</span>',
-      s1H2: '通訳者と同じ順番で、文を聞いてみる。',
-      s1P: '日本語は「主語―目的語―<em>動詞</em>」の順です。単語を一つずつ表示して、英語の「暫定訳」パネルを見てください。通訳者は話題・期限・動作は分かっても、<em>それが実現するのか</em>は最後の一語まで分かりません。途中でどれだけ訳を確定できないか、確かめてみましょう。',
-      s1SimLabel: 'リアルタイム通訳 · 一語ずつ',
-      s1MeterCap: '通訳者が確実に言えること',
-      s1GuessWho: '通訳者の暫定的な英訳',
+      s1H2: 'Meet が字幕を組み立てるとおりに、文を見てみる。',
+      s1P: '日本語は「主語―目的語―<em>動詞</em>」の順です。単語を一つずつ表示して、英語の字幕パネルを見てください。字幕は話題・期限・動作は出せても、<em>それが実現するのか</em>は最後の一語まで出せません。途中でどれだけ確定できないか、確かめてみましょう。',
+      s1SimLabel: 'ライブ字幕 · 一語ずつ',
+      s1MeterCap: '字幕が確実に出せること',
+      s1GuessWho: '現時点の字幕（英語）',
       s1Next: '次の単語を表示',
       s1Reset: '最初から',
-      s1FlipLead: '最後の一語が、すべてを決めました。<b>語尾を切り替えて</b>みてください。通訳者には、どちらが来るのか最後の瞬間まで分かりません：',
+      s1FlipLead: '最後の一語が、すべてを決めました。<b>語尾を切り替えて</b>みてください。字幕には、どちらが来るのか最後の瞬間まで分かりません：',
 
       s2Eyebrow: '体験する <span aria-hidden="true">·</span> <span class="jp">主語の省略</span>',
       s2H2: '同じ一文。さて、誰の担当？',
-      s2P: '日本語は、文脈で分かると思えば主語をふつうに省きます。英語の文法はそれを許しません——だから通訳者は、その場で<em>誰かを選ぶ</em>しかありません。下の日本語は同じまま。主語をタップすると、四通りの異なる英訳が現れます。',
+      s2P: '日本語は、文脈で分かると思えば主語をふつうに省きます。英語の文法はそれを許しません——だから Meet は、その場で<em>誰かを選ぶ</em>しかありません。下の日本語は同じまま。主語をタップすると、四通りの異なる英語字幕が現れます。',
       s2SimLabel: '同じ入力 · 四通りの出力',
       s2Rom: 'wakarimashita. yatte-okimasu. — 「わかった。（前もって）やっておく。」',
       s2ChipsLbl: '「やっておきます」の主語は？',
       s2Chip0: '私', s2Chip1: '私たち', s2Chip2: '彼女', s2Chip3: '取引先',
-      s2OutWho: '通訳者が確定させるしかない訳',
+      s2OutWho: '字幕が確定させるしかない訳',
       s2Foot: '日本語には、これらを区別する手がかりがありません。取り違えれば、担当（アクションアイテム）を別の人に割り当ててしまう——会議が静かにこじれる、よくある原因です。',
 
       s3Eyebrow: 'そのほかの難所 <span aria-hidden="true">·</span> <span class="jp">難しい理由</span>',
       s3H2: '残りの障害物コース。',
-      s3P: 'どれも、あなたが話し続けるあいだ、通訳者に「あいまいさ」を頭の中で抱えさせるものです。',
+      s3P: 'どれも、あなたが話し続けるあいだ、翻訳に「あいまいさ」を抱えさせ、推測を迫るものです。',
       c1t: '否定は文末にひそむ', c1s: 'Negation',
       c1b: 'さっき見たとおりです：<span class="ex">できます / できません</span>、<span class="ex">行く / 行かない</span>。文が肯定か否定かは、最後の数音で決まります。',
       c2t: '敬語のレベル', c2s: 'Keigo',
@@ -551,24 +551,24 @@
       c3t: '「はい」は「yes」ではない', c3s: 'Aizuchi',
       c3b: '<span class="ex">はい・ええ・なるほど</span>は「聞いていますよ」という相槌で、「同意します」ではありません。同意と受け取られると、誰も与えていない合意が作られてしまいます。',
       c4t: '助数詞が数を変える', c4s: 'Counters',
-      c4b: '「1」は数えるものによって<span class="ex">一本・一枚・一匹・一つ</span>と変わります。通訳者は、数を言う前にまず名詞を知らなければなりません。',
+      c4b: '「1」は数えるものによって<span class="ex">一本・一枚・一匹・一つ</span>と変わります。字幕は、数を出す前にまず名詞を知らなければなりません。',
       c5t: '同音異義語だらけ', c5s: 'Homophones',
       c5b: '<span class="ex">はし</span>は橋・箸・端のどれでもありえます。区別できるのは文脈だけ——しかも、まだ話されていないこともあります。',
       c6t: '話題か、主語か', c6s: 'は / が',
       c6b: '助詞の<span class="ex">は</span>と<span class="ex">が</span>は、強調や「既知／新情報」の区別を変えます。英語はそれを語順や強勢で表します。',
 
       meetEyebrow: '主に使うツール <span aria-hidden="true">·</span> Google Meet',
-      meetH2: 'Google Meet では、これがさらに効いてくる。',
-      meetP: '上のコツは、人間でも機械でも、どんな通訳にも役立ちます。ただ Google Meet の翻訳には独特の仕組みがあり、ある一点が使い方を変えます。',
+      meetH2: 'Google Meet はあなたをどう訳すか——そして、どこでつまずくか。',
+      meetP: '会話はすべて Meet のライブ翻訳を通ります。Meet がどのように字幕を組み立てるか——そして、何よりも先に知っておくべき一点を、ここで押さえます。',
       meetLeadTag: '日 ⇄ 英',
       meetLeadT: '聞くのではなく、字幕を読むことになります。',
-      meetLeadB: 'Meet の音声翻訳——合成音声——は日本語に対応していません。日英は<em>翻訳字幕（テキスト）</em>として動きます。各自が自分の字幕言語を設定して読む形です。だから目標は、追える速さできれいなテキストが画面に出ること——これらのコツはまさにそれを守ります。',
+      meetLeadB: 'Meet の音声翻訳——合成音声——は日本語に対応していません。日英は<em>翻訳字幕（テキスト）</em>として動きます。各自が自分の字幕言語を設定して読む形です。だから目標は、追える速さできれいなテキストが画面に出ること——このページの残りは、まさにそれを守るためのものです。',
       m1k: '音声の入力',
       m1t: 'まず文字起こし、それから翻訳。',
       m1b: 'Meet は翻訳の<em>前</em>に、音声を文字に起こします。弱いマイク・雑音・同時発話は、まず文字起こしを壊し、翻訳はその誤りをそのまま下流へ運びます。良い音声と「一度に一人」は、ここでこそ効きます。',
       m2k: 'リアルタイム書き換え',
       m2t: '字幕は、話すそばから書き換わる。',
-      m2b: 'Meet は暫定的な訳を表示し、音声が続くにつれて前の語を修正します。日本語は動詞が最後なので、字幕がいったん「はい」と出てから「いいえ」に反転することも——デモの<span class="ex">できます → できません</span>が、そのまま画面で起きます。文を言い切り、少し止まって、テキストが落ち着くのを待ちましょう。',
+      m2b: 'Meet は暫定的な訳を表示し、音声が続くにつれて前の語を修正します。日本語は動詞が最後なので、字幕がいったん「はい」と出てから「いいえ」に反転することも——下のデモで試せる<span class="ex">できます → できません</span>の反転が、そのまま画面で起きます。文を言い切り、少し止まって、テキストが落ち着くのを待ちましょう。',
       m3k: '遅延',
       m3t: '数秒の遅れがある——待つこと。',
       m3b: '字幕は話者から一拍遅れ、Meet は追いつくあいだインジケーターを表示します。相手が止まった瞬間に返さないこと——あなたが答えようとしている行は、まだ訳し終わっていないかもしれません。',
@@ -577,12 +577,12 @@
       m4b: '各参加者が<em>「設定 → 字幕」</em>で字幕言語を選びます——日本語の人は日本語、英語の人は英語を読みます。字幕は自分が参加している間の部分しか出ないので、時間どおりに参加を。',
 
       s4Eyebrow: '参加者全員へ <span aria-hidden="true">·</span> <span class="jp">全員へ</span>',
-      s4H2: '通訳者が追いつける話し方を。',
-      s4P: 'これらの習慣は、どちらの言語で話していても役立ちます——そして<em>人間の通訳者にも、AIのリアルタイム字幕にも同じように</em>効きます。',
-      r1t: '一文に、一つの内容', r1d: '短い文は、通訳者が追いつく余地を与えます。長い一続きの文は、すべてを一度に抱え込ませます。',
+      s4H2: '字幕が追いつける話し方を。',
+      s4P: 'これらの習慣は、どちらの言語で話していても役立ち——<em>Meet のライブ字幕の精度を大きく高めます。</em>',
+      r1t: '一文に、一つの内容', r1d: '短い文は、字幕が追いつく余地を与えます。長い一続きの文は、すべてを一度に抱え込ませます。',
       r2t: '句点で一拍おく', r2d: '一つの考えを言い切り、少し間をおく。その空白で、実際に訳が行われます。',
-      r3t: '話すのは一度に一人', r3d: '声が重なると、どちらも通訳できません。訳が終わってから返しましょう。',
-      r4t: '資料を事前に共有', r4d: '議題・スライド・名前・重要用語を前もって渡せば、通訳者はその場任せにせず語彙を準備できます。',
+      r3t: '話すのは一度に一人', r3d: '声が重なると、どちらも字幕にできません。字幕が追いついてから返しましょう。',
+      r4t: '資料を事前に共有', r4d: '議題・スライド・名前・重要用語を前もって共有すれば、字幕が専門用語を崩したときに全員が参照できます。',
       r5t: '名前と数字ははっきりと', r5d: '略語は初出で正式名を。重要な数値や日付はゆっくり繰り返す。数字は文脈から復元できません。',
       r6t: '慣用句と冗談は控える', r6d: '「circle back」「ballpark」、ダジャレ、スポーツのたとえは伝わりません。素直な意味で言いましょう。',
 
@@ -601,10 +601,10 @@
       ten1: '<b>ゆっくり、区切って。</b>ネイティブの速さは、誰もリアルタイムでは訳しきれません。短く、完結した単位で話しましょう。',
       ten2: '<b>慣用句を省く。</b>「low-hanging fruit」「let\'s table this」「ballpark」——文字どおりの意味で言いましょう。',
       ten3: '<b>節は一つずつ。</b>従属節を長く連ねない（"which, given that…, means…"）。',
-      ten4: '<b>質問のあとは間をおく。</b>質問が訳され、答えが返ってくる余地を作ってから、沈黙を埋めましょう。',
-      ten5: '<b>早合点で答えない。</b>訳が最後まで終わるのを待つ——最後の数語で意味が変わることがあります。',
+      ten4: '<b>質問のあとは間をおく。</b>質問が字幕になり、答えが返ってくる余地を作ってから、沈黙を埋めましょう。',
+      ten5: '<b>早合点で答えない。</b>字幕が最後まで出そろうのを待つ——最後の数語で意味が変わることがあります。',
 
-      footText: '多言語会議のための実践ガイド——通訳者を助ければ、通訳者があなたを助けてくれます。'
+      footText: '言語をまたぐ Google Meet のための実践ガイド——字幕のために話せば、字幕があなたのために働きます。'
     };
 
     /* Demo strings that JS renders dynamically (both languages authored). */
@@ -619,7 +619,7 @@
           'A noun — "handling." Can we? Can\'t we? The polarity is still coming.'
         ],
         endNote: { pos: 'Positive. A commitment made.', neg: 'Negative — the opposite promise. Decided by the last word.' },
-        finalSuffix: ' <b>Until this word, the interpreter had committed to almost nothing.</b>'
+        finalSuffix: ' <b>Until this word, the caption could commit to almost nothing.</b>'
       },
       ja: {
         waiting: '▍ 聞き取り中…',
@@ -631,7 +631,7 @@
           '「対応」という名詞。できるのか、できないのか。肯定か否定かはまだ先です。'
         ],
         endNote: { pos: '肯定。約束が成立しました。', neg: '否定——正反対の約束です。最後の一語で決まります。' },
-        finalSuffix: ' <b>この一語まで、通訳者はほとんど何も確定できていませんでした。</b>'
+        finalSuffix: ' <b>この一語まで、字幕はほとんど何も確定できていませんでした。</b>'
       }
     };
 
